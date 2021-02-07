@@ -129,7 +129,7 @@ private:
 
 	bool CreateWorkerThread()
 	{
-		for (int i = 0; i < maxWorkerThreadNum; ++i)
+		for (UINT i = 0; i < maxWorkerThreadNum; ++i)
 		{
 			workerThreads.emplace_back([this]() {WorkerThread(); });
 		}
