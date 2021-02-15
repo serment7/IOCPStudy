@@ -1,21 +1,39 @@
 #pragma once
 
 #include "IOCPServer.h"
+#include "Packet.h"
 
-class EchoServer : public IOCPServer
+#include <vector>
+#include <deque>
+#include <thread>
+#include <mutex>
+
+namespace SBNetLib
 {
-	virtual void OnConnect(const UINT32 clientIndex_) override
+	class EchoServer : public IOCPServer
 	{
-		printf("[OnConnect] 클라이언트: Index(%d)\n", clientIndex_);
-	}
+	public:
+		EchoServer() = default;
+		virtual ~EchoServer() = default;
 
-	virtual void OnClose(const UINT32 clientIndex_) override
-	{
-		printf("[OnClose] 클라이언트: Index(%d)\n", clientIndex_);
-	}
+		virtual void OnConnect(const UINT32 clientIndex_) override;
 
-	virtual void OnRecv(const UINT32 clientIndex_, const UINT32 size_, char* pData_) override
-	{
-		printf("[OnReceive] 클라이언트: Index(%d), dataSize(%d)\n", clientIndex_, size_);
-	}
-};
+		virtual void OnClose(const UINT32 clientIndex_) override;
+
+		virtual void OnRecv(const UINT32 inClientIndex, const UINT32 inSize, char* inData) override;
+
+		void Run(const UINT32 maxClient);
+
+		void End();
+
+	private:
+		void ProcessPacket();
+
+		PacketData& DequePacketData();
+
+		bool isRunProcessThread = false;
+		std::thread processThread;
+		std::mutex lock;
+		std::deque<PacketData> packetDataDeque;
+	};
+}

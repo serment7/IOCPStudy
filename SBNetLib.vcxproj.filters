@@ -25,36 +25,60 @@
     <Filter Include="NetLib\Server\IOCPServer">
       <UniqueIdentifier>{eec263d8-4c0f-49c1-9b51-dd6662876803}</UniqueIdentifier>
     </Filter>
+    <Filter Include="NetLib\Server\Config">
+      <UniqueIdentifier>{83c3aac4-d8e1-40ff-9b7b-dd761eaf2004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NetLib\Util\String">
+      <UniqueIdentifier>{0f56ccba-a883-446f-bb4f-79a642ff30e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NetLib\Server\EchoServer">
+      <UniqueIdentifier>{468fad89-14c8-4fa6-ab5a-d8ec0a5b9dc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NetLib\Define">
+      <UniqueIdentifier>{0b805531-e024-46cc-aae0-d56cb459f0a4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ServerConfig.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="SBNetLib.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="String.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="NetDefine.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="IOCPServer.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>NetLib\Server\IOCPServer</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerConfig.h">
+      <Filter>NetLib\Server\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>NetLib\Util\String</Filter>
     </ClInclude>
     <ClInclude Include="EchoServer.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>NetLib\Server\EchoServer</Filter>
+    </ClInclude>
+    <ClInclude Include="NetDefine.h">
+      <Filter>NetLib\Define</Filter>
+    </ClInclude>
+    <ClInclude Include="Packet.h">
+      <Filter>NetLib\Define</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="String.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="IOCPServer.cpp">
+      <Filter>NetLib\Server\IOCPServer</Filter>
     </ClCompile>
     <ClCompile Include="ServerConfig.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>NetLib\Server\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="String.cpp">
+      <Filter>NetLib\Util\String</Filter>
+    </ClCompile>
+    <ClCompile Include="EchoServer.cpp">
+      <Filter>NetLib\Server\EchoServer</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientInfo.h">
+      <Filter>NetLib\Define</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
